@@ -20,5 +20,6 @@ export interface Movie {
 export interface Tab {
   id: number;
   title: string;
+  type: string;
   category: string;
 }

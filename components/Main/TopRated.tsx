@@ -11,11 +11,13 @@ const tabData: Tab[] = [
   {
     id: 1,
     title: "무비차트",
+    type: "",
     category: "popular",
   },
   {
     id: 2,
     title: "상영예정작",
+    type: "",
     category: "upcoming",
   },
 ];
@@ -29,7 +31,10 @@ export default function TopRated() {
     const fetchData = async () => {
       setLoading(true);
 
-      const fetchedMovies = await fetchMovies(tabData[activeTab].category);
+      const category = tabData[activeTab].category;
+      const type = tabData[activeTab].type;
+
+      const fetchedMovies = await fetchMovies(category, type);
 
       setMovies(fetchedMovies);
       setLoading(false);
