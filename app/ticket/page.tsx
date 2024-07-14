@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TicketPage() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-6">
       <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
         예매하기
       </h2>
