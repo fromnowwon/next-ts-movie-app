@@ -31,8 +31,6 @@ export const fetchPopularMovies = async (
   const data = await response.json();
   const movies = data.results;
 
-  console.log(movies);
-
   if (movies.length === 0 || page > 4) {
     return { movies: movies, hasMore: false };
   }
@@ -49,8 +47,6 @@ export const fetchMovieDetail = async (movieId: string) => {
   const response = await fetch(url, { next: { revalidate: 10000 } });
   const data = await response.json();
   const movieDetail = data;
-
-  console.log(movieDetail);
 
   return movieDetail as MovieDetail;
 };
