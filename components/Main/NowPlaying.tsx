@@ -10,9 +10,9 @@ import { Tab } from "@/types/MovieTypes";
 const tabData: Tab[] = [
   {
     id: 1,
-    title: "무비차트",
+    title: "상영중",
     type: "",
-    category: "popular",
+    category: "now_playing",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const tabData: Tab[] = [
   },
 ];
 
-export default function TopRated() {
+export default function NowPlaying() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [activeTab, setActiveTab] = useState(0);
   const [loading, setLoading] = useState(false);
