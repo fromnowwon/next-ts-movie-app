@@ -22,6 +22,7 @@ interface FetchMoviesResponse {
   hasMore: boolean;
 }
 
+// 인기차트
 export const fetchPopularMovies = async (
   page: number
 ): Promise<FetchMoviesResponse> => {
@@ -41,6 +42,25 @@ export const fetchPopularMovies = async (
   return { movies, hasMore: true };
 };
 
+// 영화 검색
+export const fetchMovieSearch = async (
+  searchTerm: String,
+  page: number
+): Promise<FetchMoviesResponse> => {
+  const url = `${BASE_URL}/search/movie?query=${searchTerm}&api_key=${API_KEY}&language=ko-KR&page=1&include_adult=false`;
+
+  const response = await fetch(url, { next: { revalidate: 10000 } });
+  const data = await response.json();
+  const movies = data.results;
+
+  if (movies.length === 0 || page > 4) {
+    return { movies: movies, hasMore: false };
+  }
+
+  return { movies, hasMore: true };
+};
+
+// 영화 상세
 export const fetchMovieDetail = async (movieId: string) => {
   const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=ko-KR&page=1&include_adult=false`;
 
