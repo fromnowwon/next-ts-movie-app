@@ -16,7 +16,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
   return (
     <section className="container mx-auto py-6">
-      <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
+      <h2 className="text-4xl pb-5 border-b-2 border-gray-700 dark:border-gray-50">
         영화 정보
       </h2>
       <div className="flex flex-col items-center md:flex-row md:items-start mt-6">

@@ -15,7 +15,7 @@ export default async function TicketPage({ params }: TicketPageProps) {
 
   return (
     <section className="container mx-auto py-6">
-      <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
+      <h2 className="text-4xl pb-5 border-b-2 border-gray-700 dark:border-gray-50">
         {movieDetail.title || movieDetail.name} 예매하기
       </h2>
       <Image
