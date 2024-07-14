@@ -4,9 +4,9 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div>
+    <main className="container mx-auto py-6">
       <Playing />
       <Trending />
-    </div>
+    </main>
   );
 }

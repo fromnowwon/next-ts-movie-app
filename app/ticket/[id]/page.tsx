@@ -14,7 +14,7 @@ export default async function TicketPage({ params }: TicketPageProps) {
   const movieDetail = await fetchMovieDetail(movieId);
 
   return (
-    <div className="container mx-auto">
+    <section className="container mx-auto py-6">
       <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
         {movieDetail.title || movieDetail.name} 예매하기
       </h2>
@@ -25,6 +25,6 @@ export default async function TicketPage({ params }: TicketPageProps) {
         alt={movieDetail.title ?? movieDetail.name ?? "Ticket page"}
         className="mt-6 pb-10"
       />
-    </div>
+    </section>
   );
 }

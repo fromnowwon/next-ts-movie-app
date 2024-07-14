@@ -51,13 +51,15 @@ export default function Trending() {
     <section className="mt-7">
       <Tabs tabData={tabData} onSelect={handleSelect} />
 
-      {loading ? (
-        <div className="flex justify-center">
-          <Loader size={{ width: 70, height: 70 }} />
-        </div>
-      ) : (
-        <Results movies={movies} />
-      )}
+      <div className="min-h-[312px]">
+        {loading ? (
+          <div className="flex items-center justify-center min-h-[312px]">
+            <Loader size={{ width: 70, height: 70 }} />
+          </div>
+        ) : (
+          <Results movies={movies} />
+        )}
+      </div>
     </section>
   );
 }

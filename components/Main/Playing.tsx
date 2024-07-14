@@ -51,13 +51,17 @@ export default function Playing() {
     <section>
       <Tabs tabData={tabData} onSelect={handleSelect} />
 
-      {loading ? (
-        <div className="flex justify-center">
-          <Loader size={{ width: 70, height: 70 }} />
-        </div>
-      ) : (
-        <Results movies={movies} />
-      )}
+      <div className="min-h-[312px]">
+        {loading ? (
+          <div className="flex items-center justify-center min-h-[312px]">
+            <Loader size={{ width: 70, height: 70 }} />
+          </div>
+        ) : (
+          <div>
+            <Results movies={movies} />
+          </div>
+        )}
+      </div>
     </section>
   );
 }

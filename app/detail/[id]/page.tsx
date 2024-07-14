@@ -15,7 +15,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
   const movieDetail = await fetchMovieDetail(movieId);
 
   return (
-    <section>
+    <section className="container mx-auto py-6">
       <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
         영화 정보
       </h2>

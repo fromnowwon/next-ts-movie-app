@@ -12,7 +12,7 @@ interface ResultsProps {
 
 export default function Results({ movies }: ResultsProps) {
   return (
-    <div className="mt-3 min-h-[294px]">
+    <div className="mt-3">
       <Swiper
         modules={[Navigation, Scrollbar, A11y]}
         spaceBetween={30}

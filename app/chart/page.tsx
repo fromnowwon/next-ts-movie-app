@@ -3,7 +3,7 @@ import ChartLoadMore from "@/components/Chart/ChartLoadMore";
 
 export default function ChartPage() {
   return (
-    <section>
+    <section className="container mx-auto py-6">
       <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
         무비차트
       </h2>

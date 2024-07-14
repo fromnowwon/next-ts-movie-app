@@ -18,7 +18,7 @@ const navMenuData = [
 
 export default function NavBar() {
   return (
-    <nav className="flex flex-col w-full">
+    <nav className="flex flex-col w-full pt-4">
       <div className="flex justify-between items-center container mx-auto">
         <Link href="/">
           <h1 className="text-primary dark:text-primary-dark font-bold text-4xl">
