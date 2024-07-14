@@ -1,7 +1,9 @@
+"use client";
 import { Movie } from "@/types/MovieTypes";
 import Image from "next/image";
 import Link from "next/link";
 import { FiThumbsUp } from "react-icons/fi";
+import { MotionDiv } from "../common/MotionDiv";
 
 interface ChartCardProps {
   movie: Movie;
@@ -9,8 +11,22 @@ interface ChartCardProps {
 }
 
 export default function ChartCard({ movie, index }: ChartCardProps) {
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <div>
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        // delay: index * 0.05,
+        ease: "easeInOut",
+        duration: 0.25,
+      }}
+    >
       <p className="bg-primary text-xl text-white text-center font-semibold">
         No.{index + 1}
       </p>
@@ -43,6 +59,6 @@ export default function ChartCard({ movie, index }: ChartCardProps) {
           </div>
         </Link>
       </div>
-    </div>
+    </MotionDiv>
   );
 }

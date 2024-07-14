@@ -2,14 +2,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiThumbsUp } from "react-icons/fi";
 import { Movie } from "@/types/MovieTypes";
+import { MotionDiv } from "@/components/common/MotionDiv";
 
 interface CardProps {
   movie: Movie;
 }
 
 export default function Card({ movie }: CardProps) {
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <div className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-2 transition-shadow duration-200">
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        ease: "easeInOut",
+        duration: 0.5,
+      }}
+      className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-2 transition-shadow duration-200"
+    >
       <Link href={`detail/${movie.id}`}>
         <div className="relative w-full h-[234px] overflow-hidden">
           <Image
@@ -38,6 +53,6 @@ export default function Card({ movie }: CardProps) {
           </p>
         </div>
       </Link>
-    </div>
+    </MotionDiv>
   );
 }

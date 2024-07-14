@@ -4,7 +4,7 @@ import Tabs from "./common/Tabs";
 import Results from "./common/Results";
 import { fetchMovies } from "@/lib/api";
 import { Movie } from "@/types/MovieTypes";
-import Loader from "./common/Loader";
+import Loader from "../common/Loader";
 import { Tab } from "@/types/MovieTypes";
 
 const tabData: Tab[] = [
@@ -22,7 +22,7 @@ const tabData: Tab[] = [
   },
 ];
 
-export default function NowPlaying() {
+export default function Playing() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [activeTab, setActiveTab] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -51,7 +51,13 @@ export default function NowPlaying() {
     <section>
       <Tabs tabData={tabData} onSelect={handleSelect} />
 
-      {loading ? <Loader /> : <Results movies={movies} />}
+      {loading ? (
+        <div className="flex justify-center">
+          <Loader size={{ width: 70, height: 70 }} />
+        </div>
+      ) : (
+        <Results movies={movies} />
+      )}
     </section>
   );
 }

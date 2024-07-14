@@ -5,6 +5,7 @@ import Image from "next/image";
 import { fetchPopularMovies } from "@/lib/api";
 import ChartCard from "./ChartCard";
 import { Movie } from "@/types/MovieTypes";
+import Loader from "../common/Loader";
 
 let page = 2;
 
@@ -35,7 +36,7 @@ export default function ChartLoadMore() {
       ))}
       {hasMore && (
         <div ref={ref} className="col-span-full flex justify-center py-3">
-          <Image src="/spinner.svg" alt="Loading..." width={70} height={70} />
+          <Loader size={{ width: 70, height: 70 }} />
         </div>
       )}
     </>
