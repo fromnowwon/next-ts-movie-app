@@ -22,7 +22,7 @@ export default function Results({ movies }: ResultsProps) {
             slidesPerView: 2,
           },
           640: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1024: {
             slidesPerView: 5,
