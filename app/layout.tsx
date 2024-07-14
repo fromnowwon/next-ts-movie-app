@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { ThemeProvider } from "next-themes";
 
-const notoSansKr = Noto_Sans({ subsets: [] });
+const notoSansKr = Noto_Sans_KR({ subsets: [] });
 
 export const metadata: Metadata = {
   title: "Next Movie",
