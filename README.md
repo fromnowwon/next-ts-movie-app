@@ -1,4 +1,4 @@
-# Movie App (Next.js & TypeScript & Tailwind CSS)
+# Movie App (Next.js + TypeScript + Tailwind CSS)
 
 이 프로젝트는 영화 정보를 제공하는 Next.js 기반의 웹 애플리케이션입니다. 무비차트와 상영예정작 등의 영화 정보를 확인할 수 있습니다.
 
