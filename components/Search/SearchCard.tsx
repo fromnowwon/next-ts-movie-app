@@ -1,16 +1,26 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { FiThumbsUp } from "react-icons/fi";
 import { Movie } from "@/types/MovieTypes";
+import { useState } from "react";
 
 interface SearchCardProps {
   movie: Movie;
 }
 
 export default function SearchCard({ movie }: SearchCardProps) {
-  const imgSrc = `https://image.tmdb.org/t/p/original/${
-    movie.backdrop_path || movie.poster_path
-  }}`;
+  const [imgSrc, setImgSrc] = useState(
+    `https://image.tmdb.org/t/p/original/${
+      movie.backdrop_path || movie.poster_path
+    }}`
+  );
+
+  const handleImageError = () => {
+    setImgSrc(
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
+    );
+  };
 
   return (
     <div className="group cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 transition-shadow duration-200">
@@ -24,6 +34,7 @@ export default function SearchCard({ movie }: SearchCardProps) {
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
             className="absolute inset-0 w-full h-full object-cover"
+            onError={handleImageError}
           ></Image>
         </div>
         <div className="p-3">
