@@ -10,6 +10,7 @@ export default function SearchBox() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/search/${searchQuery}`);
+    setSearchQuery("");
   };
 
   return (
