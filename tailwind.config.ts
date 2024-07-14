@@ -11,16 +11,16 @@ const config: Config = {
     fontFamily: {
       sans: ["Noto Sans Kr", "sans-serif"],
     },
-    colors: {
-      primary: {
-        DEFAULT: "#FB4357",
-        dark: "#C53030",
-      },
-    },
     container: {
       padding: "0 1rem",
     },
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#FB4357",
+          dark: "#C53030",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
