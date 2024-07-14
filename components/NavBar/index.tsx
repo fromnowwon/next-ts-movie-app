@@ -6,8 +6,8 @@ import SearchBox from "./SearchBox";
 const navMenuData = [
   {
     id: 1,
-    title: "영화",
-    address: "/movies",
+    title: "차트",
+    address: "/chart",
   },
   {
     id: 2,
