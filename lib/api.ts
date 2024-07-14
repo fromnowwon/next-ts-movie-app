@@ -43,21 +43,14 @@ export const fetchPopularMovies = async (
 };
 
 // 영화 검색
-export const fetchMovieSearch = async (
-  searchTerm: String,
-  page: number
-): Promise<FetchMoviesResponse> => {
+export const fetchMovieSearch = async (searchTerm: String) => {
   const url = `${BASE_URL}/search/movie?query=${searchTerm}&api_key=${API_KEY}&language=ko-KR&page=1&include_adult=false`;
 
   const response = await fetch(url, { next: { revalidate: 10000 } });
   const data = await response.json();
   const movies = data.results;
 
-  if (movies.length === 0 || page > 4) {
-    return { movies: movies, hasMore: false };
-  }
-
-  return { movies, hasMore: true };
+  return movies;
 };
 
 // 영화 상세
