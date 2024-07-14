@@ -19,7 +19,7 @@ export const fetchMovies = async (category: string, type: string) => {
     movies.sort((a: Movie, b: Movie) => b.popularity - a.popularity);
   }
 
-  return movies as Movie;
+  return movies as Movie[];
 };
 
 export const fetchMovieDetail = async (movieId: string) => {
