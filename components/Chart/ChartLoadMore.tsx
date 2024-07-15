@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
 import { fetchPopularMovies } from "@/lib/api";
 import ChartCard from "./ChartCard";
 import { Movie } from "@/types/MovieTypes";
