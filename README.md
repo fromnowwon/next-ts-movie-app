@@ -2,7 +2,7 @@
 
 이 프로젝트는 영화 정보를 제공하는 Next.js 기반의 웹 애플리케이션입니다. 무비차트와 상영예정작 등의 영화 정보를 확인할 수 있습니다.
 
-- [DEMO](https://next-ts-movie-app.vercel.app/)
+- [DEMO](https://main.d3ltayzm03kvdg.amplifyapp.com/)
 
 ![DEMO PAGE](./public/sample1.png)
 ![DEMO PAGE](./public/sample2.png)
@@ -46,9 +46,9 @@ npm run dev
 
 ## 사용 기술
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
+- **프론트엔드:** Next.js, TypeScript
+- **UI 프레임워크**: Tailwind CSS
+- **배포:** AWS Amplify
 
 ## 사용된 API
 
