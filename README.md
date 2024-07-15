@@ -46,15 +46,13 @@ npm run dev
 
 ## 사용 기술
 
-- Next.js
-- React
+- Next.js 14
 - TypeScript
-- JavaScript
 - Tailwind CSS
 
 ## 사용된 API
 
-TMDB API: 영화 정보 제공을 위한 API (TMDB)
+TMDB API: 영화 정보 제공을 위한 API
 
 ## 사용된 라이브러리
 
@@ -73,8 +71,8 @@ TMDB API: 영화 정보 제공을 위한 API (TMDB)
 │   │   ├── detail/
 │   │   ├── search/
 │   │   ├── ticket/
-│   │   ├── page.js
-│   │   ├── layout.js
+│   │   ├── page.tsx
+│   │   ├── layout.tsx
 │   ├── components/
 ├── package.json
 ├── README.md
