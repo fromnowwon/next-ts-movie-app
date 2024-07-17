@@ -2,7 +2,7 @@
 
 이 프로젝트는 영화 정보를 제공하는 Next.js 기반의 웹 애플리케이션입니다. 무비차트와 상영예정작 등의 영화 정보를 확인할 수 있습니다.
 
-- [DEMO](https://main.d3ltayzm03kvdg.amplifyapp.com/)
+- [DEMO](https://main.d3kt647779ru59.amplifyapp.com/)
 
 ![DEMO PAGE](./public/sample1.png)
 ![DEMO PAGE](./public/sample2.png)
