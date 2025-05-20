@@ -15,7 +15,7 @@ export default async function SearchPage({ params }: SearchPageProps) {
 
   return (
     <section className="container mx-auto py-6">
-      <h2 className="text-4xl pb-5 border-b-2 border-gray-700 dark:border-gray-50">
+      <h2 className="text-4xl pb-5 border-b-2 border-gray-700 dark:border-gray-50 px-2.5">
         &quot;{decodeURIComponent(searchTerm)}&quot; 검색 결과
       </h2>
       {movies && movies.length === 0 && (

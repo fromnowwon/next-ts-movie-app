@@ -32,7 +32,7 @@ export default function Card({ movie }: CardProps) {
         ease: "easeInOut",
         duration: 0.5,
       }}
-      className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
+      className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 shadow-md border border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
     >
       <Link href={`detail/${movie.id}`}>
         <div className="relative w-full h-[234px] overflow-hidden bg-gray-200">

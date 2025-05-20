@@ -15,14 +15,14 @@ export default function Results({ movies }: ResultsProps) {
     <div className="mt-3">
       <Swiper
         modules={[Navigation, Scrollbar, A11y]}
-        spaceBetween={30}
+        spaceBetween={10}
         slidesPerView={1}
         breakpoints={{
           390: {
             slidesPerView: 2,
           },
           640: {
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
           1024: {
             slidesPerView: 5,
