@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiThumbsUp } from "react-icons/fi";
@@ -14,6 +17,12 @@ export default function Card({ movie }: CardProps) {
     visible: { opacity: 1 },
   };
 
+  const imageUrl = `https://image.tmdb.org/t/p/original${
+    movie.poster_path || movie.backdrop_path || ""
+  }`;
+
+  const [imageError, setImageError] = useState(false);
+
   return (
     <MotionDiv
       variants={variants}
@@ -26,18 +35,21 @@ export default function Card({ movie }: CardProps) {
       className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
     >
       <Link href={`detail/${movie.id}`}>
-        <div className="relative w-full h-[234px] overflow-hidden">
-          <Image
-            src={`https://image.tmdb.org/t/p/original${
-              movie.poster_path || movie.backdrop_path
-            }}`}
-            alt={movie.title ?? movie.name ?? "movie image"}
-            width={300}
-            height={500}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
-            className="absolute inset-0 w-full h-full object-cover"
-          ></Image>
+        <div className="relative w-full h-[234px] overflow-hidden bg-gray-200">
+          {!imageError ? (
+            <Image
+              src={imageUrl}
+              alt={movie.title ?? movie.name ?? "movie image"}
+              width={300}
+              height={500}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gray-300" />
+          )}
         </div>
         <div className="w-full p-2">
           <h2 className="text-md font-bold truncate">
